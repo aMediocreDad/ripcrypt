@@ -1,0 +1,22 @@
+{
+  "name": "ripcrypt",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@league-of-foundry-developers/foundry-vtt-types": "github:League-of-Foundry-Developers/foundry-vtt-types#main",
+    "@sveltejs/vite-plugin-svelte": "^4.0.1",
+    "svelte": "^5.2.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

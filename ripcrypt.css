@@ -1,0 +1,391 @@
+.ripcrypt {
+  & .editor-section {
+    & .header {
+      height: 1.5rem;
+      line-height: 1.5rem;
+      padding-left: 5px;
+    }
+
+    min-height: 100px;
+  }
+
+  &.hero {
+    min-width: 600px;
+
+    & .window-content {
+      overflow-y: auto;
+    }
+
+    & .form {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 8px;
+
+      &>div {
+        grid-column: span 6;
+      }
+
+      & input,
+      & select {
+        /* color: var(--color-light-3); */
+        background-color: transparent;
+        border-bottom: 1px solid var(--color-light-3);
+      }
+
+      & .form-group {
+        display: flex;
+        flex-flow: column-reverse;
+        align-items: baseline;
+
+        & input {
+          padding-block: 0.25rem;
+        }
+      }
+
+      & .header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        & img {
+          object-fit: contain;
+          margin: 0;
+          display: block;
+        }
+
+        & .form-group {
+          flex: 1;
+        }
+      }
+
+      & .fate {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 8px;
+
+        & .fate-type {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          & .direction {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            place-items: center;
+  
+            &>* {
+              grid-column: 1;
+              grid-row: 1;
+            }
+  
+            &>select {
+              appearance: none;
+              background: none;
+              text-align: center;
+              border: none;
+              outline: none;
+              box-shadow: none;
+              font-size: 2rem;
+              width: auto;
+  
+              &:focus-visible,
+              &:active {
+                outline: none;
+                border: none;
+                box-shadow: none;
+                filter: drop-shadow(0 0 6px var(--color-warm-2));
+              }
+  
+              & option {
+                font-size: 1rem;
+                background: var(--background);
+              }
+            }
+          }
+  
+          & .attribute {
+            font-size: 1.5rem;
+          }
+        }
+
+
+        & .form-group {
+          flex: none;
+
+          & select {
+            padding-block: 0.35rem;
+          }
+
+          &:last-child {
+            grid-column: span 1;
+          }
+        }
+      }
+
+      & .weapons {
+        & ul {
+          list-style-type: none;
+          padding-inline-start: 0;
+          margin: 0px;
+
+          & li {
+            display: flex;
+            justify-content: space-around;
+            gap: 8px;
+            padding-block: 0.25rem;
+
+            &:nth-child(odd) {
+              background-color: var(--color-cool-4);
+            }
+          }
+        }
+      }
+
+      & .attributes {
+        display: grid;
+        grid-template-columns: subgrid;
+        align-items: center;
+
+        &>div {
+          grid-column: span 1;
+
+
+          & button {
+            display: grid;
+            place-items: center;
+            border: none;
+            background: none;
+            outline: none;
+            box-shadow: none;
+            padding: 0px;
+
+            &:hover {
+              cursor: pointer;
+              background: none;
+              box-shadow: none;
+              border: none;
+              filter: drop-shadow(0 0 3px var(--color-warm-1));
+            }
+
+            &:focus-visible, &:active {
+              outline: none;
+              box-shadow: none;
+              border: none;
+              filter: drop-shadow(0 0 6px var(--color-warm-2));
+            }
+
+            &>* {
+              grid-column: 1;
+              grid-row: 1;
+            }
+
+            & span {
+              font-size: 1.5rem;
+            }
+          }
+
+          label {
+            margin-block-start: 0.25rem;
+            font-size: 0.8rem;
+            text-align: center;
+            display: block;
+            margin-inline: auto;
+          }
+        }
+
+        & .guts {
+          display: grid;
+          place-items: center;
+          color: var(--color-light-3);
+
+          & > * {
+            grid-column: 1;
+            grid-row: 1;
+          }
+
+          & input {
+            width: 4ch;
+            font-size: 1.5rem;
+            padding: 0;
+            text-align: center;
+            border: none;
+            box-shadow: none;
+            background: none;
+            outline: none;
+
+            &:focus-visible {
+              outline: none;
+              box-shadow: none;
+              border: none;
+              filter: drop-shadow(0 0 6px var(--color-warm-2));
+            }
+          }
+
+          & span {
+            width: 4ch;
+            text-align: center;
+          }
+        }
+
+        & .move {
+          position: relative;
+          display: grid;
+          place-items: center;
+          color: var(--color-light-3);
+
+          & > * {
+            grid-column: 1;
+            grid-row: 1;
+          }
+
+          & span {
+            display: block;
+            font-size: 1.125rem;
+
+            &:first-of-type {
+              margin-inline-start: -14px;
+              margin-block-start: -16px;
+            }
+
+            &:last-of-type {
+              margin-inline-end: -14px;
+              margin-block-end: -16px;
+            }
+          }
+        }
+      }
+
+      & .skills {
+        display: grid;
+        grid-template-columns: subgrid;
+
+        &>div {
+          grid-column: span 3;
+
+          ul {
+            list-style-type: none;
+            padding-inline-start: 0;
+            margin: 0px;
+
+            li {
+              display: flex;
+              justify-content: space-between;
+              gap: 8px;
+              padding-block: 0.25rem;
+
+              &:nth-child(odd) {
+                background-color: var(--color-cool-4);
+              }
+            }
+          }
+        }
+      }
+
+      & .armor {
+        grid-row: 1/span 3;
+        grid-column: 7/span 3;
+        display: grid;
+        align-items: center;
+
+        ul {
+          list-style-type: none;
+          padding-inline-start: 0;
+          margin: 0px;
+
+          li {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            padding-block: 0.25rem;
+
+            &:nth-child(odd) {
+              background-color: var(--color-cool-4);
+            }
+          }
+        }
+
+        .totals {
+          margin-block-end: 1rem;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+
+          & div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+
+            & span {
+              text-align: center;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      & .aura {
+        display: grid;
+        grid-template-columns: subgrid;
+        align-items: center;
+
+        &>* {
+          grid-column: span 2;
+        }
+      }
+
+      & .resources {
+        display: grid;
+        grid-template-columns: subgrid;
+        align-items: center;
+
+        &>* {
+          grid-column: span 2;
+        }
+      }
+
+      & .gear {
+        grid-row: 4/span 5;
+        grid-column: 7/span 3;
+
+        &>label {
+          display: flex;
+          justify-content: space-between;
+
+          & span:last-child {
+            text-align: end;
+          }
+        }
+
+        &>ul {
+          list-style-type: none;
+          padding-inline-start: 0;
+          margin: 0px;
+
+          & li {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 0.25rem 4px;
+
+            &:nth-child(odd) {
+              background-color: var(--color-cool-4);
+            }
+          }
+        }
+      }
+
+      & .notes-section {
+        grid-column: span 9;
+      }
+    }
+  }
+
+  &.dialog {
+    & button {
+      min-width: 60px;
+    }
+  }
+}

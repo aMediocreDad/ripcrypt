@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json.schemastore.org/foundryvtt-system-manifest.json",
+  "id": "ripcrypt",
+  "title": "RipCrypt",
+  "description": "A system for playing RipCrypt.",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "Filip Ambrosius",
+      "discord": "amediocredad",
+      "url": "https://github.com/aMediocreDad"
+    }
+  ],
+  "esmodules": [
+    "ripcrypt.js"
+  ],
+  "styles": [
+    "ripcrypt.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "hero": {
+        "htmlFields": [
+          "notes"
+        ]
+      }
+    },
+    "Item": {
+      "ammo": {},
+      "armor": {},
+      "gear": {},
+      "glim": {
+        "htmlFields": [
+          "notes"
+        ]
+      },
+      "shield": {},
+      "skill": {
+        "htmlFields": [
+          "notes"
+        ]
+      },
+      "weapon": {}
+    }
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "ripcrypt.css",
+        "templates",
+        "lang"
+      ]
+    }
+  },
+  "url": "https://raw.githubusercontent.com/aMediocreDad/ripcrypt/latest/system.json",
+  "download": "https://github.com/aMediocreDad/ripcrypt/archive/refs/heads/latest.zip"
+}

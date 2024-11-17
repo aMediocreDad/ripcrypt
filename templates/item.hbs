@@ -1,0 +1,87 @@
+<div id="{{partId}}">
+  <div class="form-group">
+    <label>Name</label>
+    <div class="form-fields">
+      {{formInput item.schema.fields.name value=item.name}}
+    </div>
+  </div>
+  {{#if (eq item.type "ammo")}}
+    {{formField system.schema.fields.quantity value=system.quantity}}
+  {{else if (or (eq item.type "armor") (eq item.type "shield"))}}
+    {{formField system.schema.fields.value value=system.value}}
+    <div class="form-group">
+      <label>Locations</label>
+      <div class="form-fields">
+        {{#each system.config.locations as |location|}}
+          <label>{{label location}}</label>
+          <input type="checkbox" name="system.locations" value="{{location}}"
+            {{checked (includes ../system.locations location)}} />
+        {{/each}}
+      </div>
+    </div>
+  {{else if (eq item.type "skill")}}
+    <div class="form-group">
+      <label>Attribute</label>
+      <div class="form-fields">
+        <select name="system.attribute">
+          {{selectOptions system.config.attributes selected=system.attribute}}
+        </select>
+      </div>
+    </div>
+  {{else if (eq item.type "weapon")}}
+    {{formField system.schema.fields.damage value=system.damage}}
+    <div class="form-group">
+      <label>Range</label>
+      <div class="form-field">
+        {{formInput system.schema.fields.range.fields.value value=system.range.value}}
+      </div>
+      <div class="form-field">
+        {{formInput system.schema.fields.range.fields.max value=system.range.max}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Traits</label>
+      <div class="form-fields">
+        {{#each system.config.traits as |trait|}}
+          <label>{{label trait}}</label>
+          <input type="checkbox" name="system.traits" value="{{trait}}"
+            {{checked (includes ../system.traits trait)}} />
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+  {{#if (or (eq item.type "armor") (eq item.type "shield") (eq item.type "weapon"))}}
+    <div class="form-group">
+      <label>Weight</label>
+      <div class="form-fields">
+        <select name="system.weight">
+          {{selectOptions system.config.weight selected=system.weight}}
+        </select>
+      </div>
+    </div>
+  {{/if}}
+  {{#if (or (eq item.type "skill") (eq item.type "glim"))}}
+    {{formField system.schema.fields.rank value=system.rank}}
+    {{formField system.schema.fields.ranks.fields.one value=system.ranks.one}}
+    {{formField system.schema.fields.ranks.fields.two value=system.ranks.two}}
+    {{formField system.schema.fields.ranks.fields.three value=system.ranks.three}}
+    {{formField system.schema.fields.ranks.fields.four value=system.ranks.four}}
+    {{formField system.schema.fields.description value=system.description}}
+    <div class="form-group">
+      <label>Notes</label>
+      <div class="form-field">
+        {{formInput system.schema.fields.notes value=system.notes enriched=enriched.system.notes toggled=true}}
+      </div>
+    </div>
+  {{else}}
+    <div class="form-group">
+      <label>Access</label>
+      <div class="form-fields">
+        <select name="system.access">
+          {{selectOptions system.config.access selected=system.access}}
+        </select>
+      </div>
+    </div>
+    {{formField system.schema.fields.cost value=system.cost}}
+  {{/if}}
+</div>

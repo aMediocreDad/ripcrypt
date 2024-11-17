@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "Preserve",
+		"moduleResolution": "bundler",
+		"target": "ESNext",
+		"noEmit": true,
+		"strict": true,
+		"lib": ["DOM", "DOM.Iterable", "DOM.AsyncIterable"],
+		"types": [
+			"@league-of-foundry-developers/foundry-vtt-types/index-lenient.d.mts"
+		]
+	}
+}
